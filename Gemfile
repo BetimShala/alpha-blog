@@ -34,6 +34,7 @@ gem 'pry'
 
 gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -47,7 +48,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-   gem 'sqlite3'
+  gem 'sqlite3'
   
   gem 'byebug'
   
