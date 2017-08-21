@@ -1,0 +1,66 @@
+@import 'bootstrap';
+
+#backc {
+    background-color:#0f1922 !important;
+}
+#logo
+{
+  float:left;
+  font-size: 1.7em;
+  color:#fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+#logo:hover
+{
+  color:#fff;
+  text-decoration: none;
+}
+#u-list li a
+{
+  color:#2f96e8;
+}
+.center
+{
+  text-align: center;
+}
+
+.jumbotron
+{
+  background-image:asset-url('cover_image.jpg');
+  background-size: cover;
+  height: 618px;
+  margin-top: 30px;
+  h1
+  {
+    font-size: 30px;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+.btn-xlarge
+{
+  font-size: 1.7em;
+  background-color: black;
+}
+
+
+footer{
+   background-color: #0f1922 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+   color:#2f96e8;
+}
+
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}
+

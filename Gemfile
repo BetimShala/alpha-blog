@@ -34,7 +34,8 @@ gem 'pry'
 
 gem 'coffee-script-source', '1.8.0'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-sass', '~> 3.3.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
