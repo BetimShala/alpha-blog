@@ -43,9 +43,12 @@
 .btn-xlarge
 {
   font-size: 1.7em;
-  background-color:transparent;
 }
-
+.article-actions
+{
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
 
 .card-body {
     -webkit-box-flex: 1;
@@ -55,6 +58,8 @@
     /* background-color: #f8d7da; */
     color: #ff4d4d;
 }
+
+
 
 
 footer{
@@ -72,5 +77,6 @@ footer p {
     padding: 10.5px;
     margin: 0px;
     line-height: 100%;
+    float: left;
 }
 
