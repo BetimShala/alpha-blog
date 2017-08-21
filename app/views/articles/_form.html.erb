@@ -1,14 +1,5 @@
-<% if @article.errors.any? %>
-<h2>Some errors occurs : </h2>
- 
-  <ul>
-<% @article.errors.full_messages.each do |msg| %>
-    <li><strong style="color:red"><%= msg %></strong></li>
-<% end %> 
-</ul>
-
-<% end %>
-
+<%= render 'shared/errors',:obj=>@article%>
+<br>
 <div class='container'>
   <div class="col-xs-12">
 

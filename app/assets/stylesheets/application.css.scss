@@ -47,6 +47,16 @@
 }
 
 
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    /* background-color: #f8d7da; */
+    color: #ff4d4d;
+}
+
+
 footer{
    background-color: #0f1922 !important;
     position: fixed;
