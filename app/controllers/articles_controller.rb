@@ -34,7 +34,8 @@ class ArticlesController < ApplicationController
 
   # INDEX && SHOW
   def index
-   @articles=Article.all 
+   @articles=Article.all
+ 
   end
 
   def show
