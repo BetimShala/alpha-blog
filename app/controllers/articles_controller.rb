@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   
-  before_action :find_article,:only=>[:edit,:update,:show,:destroy]
+  before_action :find_article,:only=>[:edit,:update,:show,:destroy],:except=>[:_newest_article]
   # NEW && CREATE
   def new
    @article=Article.new 

@@ -3,5 +3,7 @@
   <hr class="my-4">
   <%= link_to 'Sign up now',"#",class:'btn btn-primary btn-lg btn-xlarge',style:'margin-top: 28.5%;'%>
 </div>
+<%= render partial: 'latest',locals: {articles:Article.latest} %>
+<br>
 
 

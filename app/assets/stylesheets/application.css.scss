@@ -21,6 +21,11 @@
 {
   color:#2f96e8;
 }
+
+.container
+{
+  margin-bottom: 10%;
+}
 .center
 {
   text-align: center;
@@ -44,6 +49,7 @@
 {
   font-size: 1.7em;
   background-color:transparent;
+  color: black;
 }
 .article-actions
 {
@@ -65,7 +71,7 @@
 
 footer{
    background-color: #0f1922 !important;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     left: 0;
     right: 0;
