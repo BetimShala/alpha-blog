@@ -1,5 +1,12 @@
 class User < ActiveRecord::Base
   
+  has_many :articles
+  #po deshirojme qe te gjitha email ne db me u rujt 
+  #ne shkronja te vogla,kete gje e arrijme me ane te 
+  # metodes before_save{}
+  before_save {self.email =email.downcase}
+
+
   validates :username,presence: true,
                       uniqueness: {case_sensitive: false} ,
                       length:{minimum:3,maximum:25}

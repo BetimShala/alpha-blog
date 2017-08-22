@@ -20,9 +20,14 @@
           <!-- ####### -->
 
           <!-- actions -->
-            <p style="float:right;color: grey;">
+            <div class="row-2">
+              <p style="float:left;color: grey;">
             <%= article.updated_at.strftime("%F %T") %>
             </p>
+            <p style="float:right;color: grey;">Created by:
+            <%= article.user.username %>
+            </p>
+            </div>
           <!-- ####### -->
       </div>
     </div>
