@@ -1,5 +1,4 @@
 @import 'bootstrap';
-
 #backc {
     background-color:#0f1922 !important;
 }
@@ -79,7 +78,45 @@ padding-left: 0;
   color:white;
 }
 
+/* editim i borderave tek users/index*/
+.border-info {
+    border-color: #D0D0D0 !important;
+}
 
+/* pagination design*/
+.pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    padding: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.25rem;
+    margin-left: 21.5%;
+    margin-top: 2.5%;
+    padding: 5;
+
+    li a
+  {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: 0;
+        border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+}
+.prev.previous_page.disabled
+{
+
+}
 
 footer{
    background-color: #0f1922 !important;

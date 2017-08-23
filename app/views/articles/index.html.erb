@@ -1,5 +1,7 @@
 <%= link_to 'Articles >>',articles_path %>
-<h1 align="center">Listing All Articles</h1>
-<%= render 'article',obj:@articles%>
 
+<h1 align="center">Listing All Articles</h1>
+<%= will_paginate %>
+<%= render 'article',obj:@articles%>
+<%= will_paginate %>
   

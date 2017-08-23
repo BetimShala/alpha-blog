@@ -17,7 +17,7 @@
         <%=@article.user.short_bio %>
         <br>
         <%= @article.updated_at.strftime("%b %d") %> •&nbsp;
-        <%= (@article.description.scan(/[\w-]+/).size)/(250.0).round(1) %> min read
+        <%= ((@article.description.scan(/[\w-]+/).size)/(250.0)).round%> min read
         </p>
 
       </div>

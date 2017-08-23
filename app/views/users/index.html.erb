@@ -14,11 +14,11 @@
             <li><%= link_to gravatar_for(user), user_path(user) %></li>
 
             <li class="article-title">
-              <h4 class="card-title"> <%= link_to user.username, user_path(user) %></h4>
+              <h4 class="card-title"> <%= link_to user.username, user_path(user),style:'color:black' %></h4>
              
 
             </li>
-            <p class="card-text"><%= user.short_bio%></p>
+            <p class="card-text" style="color:grey"><%= user.short_bio%></p>
 
            
           </div>
@@ -31,5 +31,5 @@
     </ul>
 
 <% end %>
-
+<%= will_paginate %>
 </div>
