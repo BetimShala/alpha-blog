@@ -30,8 +30,11 @@ class ArticlesController < ApplicationController
   end
 
   def update
-   
+    #session[:likes]+=1
+    #@article.likes=session[:likes]
+    #binding.pry
     if @article.update_attributes(article_params)
+      binding.pry
       flash[:success]="Article successfully updated"
       redirect_to article_path(@article)
     else
@@ -47,6 +50,7 @@ class ArticlesController < ApplicationController
 
   def show
 
+session[:likes]=@article.likes
   end
 
   # DELETE && DESTROY
@@ -74,7 +78,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title,:description)
+    params.require(:article).permit(:title,:description,:likes)
   end
 
   def require_same_user
