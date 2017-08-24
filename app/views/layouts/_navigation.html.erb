@@ -10,25 +10,56 @@
         <%= link_to 'Articles',articles_path,class:'nav-link'%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+       
+        <%= link_to 'Users',users_path,class:'nav-link'%>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
+      <form class="form-inline my-2 my-lg-0" style='margin-left: 600px;'>
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+      
+    </ul>
+  <% if logged_in? %>
+    <ul class="navbar-nav mr-auto" id="u-list" style="float: right;">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Actions
         </a>
         <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
           <%= link_to 'New Article',new_article_path,class:'dropdown-item'%>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          
         </div>
+
+      </li>
+
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Your Profile
+        </a>
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'View your profile',user_path(session[:user_id]),class:'dropdown-item'%>
+          <%= link_to 'Edit your profile',edit_user_path(session[:user_id]),class:'dropdown-item'%>
+        </div>
+        
+      </li>
+
+       <li class="nav-item">
+        <%= link_to 'Log out',logout_path,method: :delete,class: 'nav-link',style: 'float:right' %>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+  <% else %>
+    <ul class="navbar-nav mr-auto" id="u-list" style="float: right;">
+      <li class="nav-item">
+        <%= link_to 'Log in',login_path,class: 'nav-link',style: 'float:right' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sign up',signup_path,class: 'nav-link',style: 'float:right' %>
+      </li>
+    </ul>
+  <% end %>
+    
   </div>
 </nav>

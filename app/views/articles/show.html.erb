@@ -29,12 +29,32 @@
 <hr class="md-12">
 
 <h2 align="center" style="margin-top: 2%;"><!--Title --><%= @article.title %></h2>
-<div class="card card-body bg-light">
-  <pre class="card-text" style="color:black;white-space:pre-wrap;
-"><%=@article.description %></pre>
-  <div class="article-actions">
+<div class="card card-body">
+  <pre class="card-text"
+   style="
+    white-space:pre-wrap; 
+    color: darkslategrey;
+    white-space: pre-wrap;
+    --x-height-multiplier: 0.35;
+    --baseline-multiplier: 0.179;
+    font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    margin-top:10px;">
+
+   <%=@article.description %>
+     
+   </pre>
+
+  <% if logged_in? && @article.user_id==session[:user_id] %>
+    <div class="article-actions">
     <%= link_to "Edit this article",edit_article_path(@article),class:'btn btn-primary btn-sm '%> 
     <%= link_to "Delete this article",article_path(@article),:method=>:delete,class:'btn btn-danger btn-sm',:data=>{:confirm=>"Are your sure you want to delete this article"}%>
-<%= link_to "Back to article listing",articles_path,class:'btn btn-success btn-sm'%>
-  </div>  
+    <%= link_to "Back to article listing",articles_path,class:'btn btn-success btn-sm'%>
+  </div> 
+  <% end %> 
 </div>
