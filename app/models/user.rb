@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   
   has_many :articles
   has_secure_password
+  has_many :likes
 
   #po deshirojme qe te gjitha email ne db me u rujt 
   #ne shkronja te vogla,kete gje e arrijme me ane te 

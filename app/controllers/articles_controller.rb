@@ -50,7 +50,6 @@ class ArticlesController < ApplicationController
 
   def show
 
-session[:likes]=@article.likes
   end
 
   # DELETE && DESTROY

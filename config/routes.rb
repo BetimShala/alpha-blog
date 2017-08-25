@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'likes/new'
+
+  get 'likes/create'
+
   get 'pages/home'
 
   get 'pages/about'
@@ -21,6 +25,8 @@ Rails.application.routes.draw do
   get 'login',to: 'sessions#new'
   post 'login',to:'sessions#create'
   delete 'logout',to: 'sessions#destroy'
+
+  resources :likes
 
   
   # The priority is based upon order of creation: first created -> highest priority.

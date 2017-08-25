@@ -56,7 +56,12 @@
     <%= link_to "Delete this article",article_path(@article),:method=>:delete,class:'btn btn-danger btn-sm',:data=>{:confirm=>"Are your sure you want to delete this article"}%>
     <%= link_to "Back to article listing",articles_path,class:'btn btn-success btn-sm'%>
   </div>
-
-    <!--<%= render 'edit' %> -->
+  
   <% end %> 
+ 
 </div>
+  <% if logged_in? && @article.user_id!=session[:user_id] %>
+
+    <%= render 'likes' %>
+    
+  <% end %>

@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   
   belongs_to :user
+  has_many :likes
 
   validates :title,presence: true,length: {minimum:3,maximum:150}
   validates :description,presence: true,length: {minimum:30}
