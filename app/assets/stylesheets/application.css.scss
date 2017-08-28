@@ -136,6 +136,27 @@ padding-left: 0;
   font-weight: 400;
 }
 
+#transform-img
+
+#transform-img
+ {
+  
+    -webkit-transition: -webkit-transform 2s; /* Safari */
+    transition:transform 2s;
+}
+
+#transform-img
+{ img:hover {
+    /*width: 300px;
+    height: 300px;*/
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: scale(1.25,1.25);
+}}
+
+#transform-img 
+{
+} 
+
 footer{
    background-color: #0f1922 !important;
     position:fixed;

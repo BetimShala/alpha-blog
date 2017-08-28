@@ -24,7 +24,7 @@
           <!-- ####### -->
 
           <!-- actions -->
-          <% if logged_in? && article.user_id==session[:user_id] %>
+          <% if logged_in? && (article.user==current_user or current_user.admin?) %>
            <div class="article-actions">
             
             <%= link_to "Edit this article",

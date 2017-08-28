@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
   
-  has_many :articles
+  has_many :articles ,dependent: :destroy # qikjo dependent destory dmth qe useri i caktum i ka artikujt e tij te caktuar
+                                          # perderisa destroy aksioni nuk eshte performuar , ne momentin qe performohet 
+                                          # aksioni i tille ateher te gjithe artikujt e tij do fshihen nga tabela
+                                          # articles
   has_secure_password
   has_many :likes
-
+  has_many :friendships
   #po deshirojme qe te gjitha email ne db me u rujt 
   #ne shkronja te vogla,kete gje e arrijme me ane te 
   # metodes before_save{}

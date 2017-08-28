@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
 
-  before_action :set_user ,:only=>[:edit,:update,:show]
+  before_action :set_user ,:only=>[:edit,:update,:show,:destroy]
   #before_action :require_user,:except=>[:index,:show]
-  before_action :require_same_user,only:[:edit,:update]
+  before_action :require_same_user,only:[:edit,:update,:destroy]
+
+  before_action :require_admin ,only:[:destroy]
 
   def new 
     @user=User.new
@@ -35,11 +37,17 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users=User.paginate(page: params[:page],per_page: 2)
+    @users=User.paginate(page: params[:page],per_page: 3)
   end
 
   def show
     @user_articles=@user.articles.order('updated_at ASC').paginate(page: params[:page],per_page:2)
+  end
+
+  def destroy
+    @user.destroy    
+    flash[:danger]="User and all articles created by user have been deleted"
+    redirect_to root_path
   end
 
   private
@@ -52,9 +60,18 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
+    if current_user != @user and !current_user.admin?
+      # qat pjesen and !current_user.admin? ja kemi shtu ne menyre qe te lejohet editimi i profileve te userave nga ana e adminit apo 
+      # edhe fshirja e tyre !!
        flash[:danger]="You can edit or delete only your account"
       redirect_to root_path
     end
+  end
+
+  def require_admin
+    if logged_in? and !current_user.admin?
+      flash[:danger]="Only admin users can perform delete action"
+      redirect_to root_path
+    end  
   end
 end

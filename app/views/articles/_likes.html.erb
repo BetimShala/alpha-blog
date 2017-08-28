@@ -6,12 +6,12 @@
             <%= hidden_field_tag(:user_id,session[:user_id]) %>
           <p style="width: 550px;margin-left: -30%;color: darkseagreen">
            If you like this article, please support it with
-           <%= button_tag(type: 'submit', class: "btn btn-primary btn-sm",style:'background:transparent;border-style:none;color:darkseagreen;font-size:medium') do %>
+           <%= button_tag(type: 'submit', id:"transform-img",class: "btn btn-primary btn-sm",style:'background:transparent;border-style:none;color:darkseagreen;font-size:medium') do %>
           
              <% if !Like.find_by(user_id: session[:user_id], article_id:@article.id) %>
-              <img src="/assets/no_like.png">
+              <img src="/assets/no_like.png" onmouseover="this.src='/assets/no_like_hover.png'" onmouseout="this.src='/assets/no_like.png'">
              <% else %>
-              <img src="/assets/like.png">
+              <img src="/assets/like.png" >
              <% end %>
              <small style="float: right;font-size: x-large;"><%= @article.likes.count %></small>
           <% end %>

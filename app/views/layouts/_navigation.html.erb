@@ -16,7 +16,7 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
-      <form class="form-inline my-2 my-lg-0" style='margin-left: 530px;'>
+      <form class="form-inline my-2 my-lg-0" style='margin-left: 510px;'>
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
@@ -36,9 +36,16 @@
       </li>
 
        <li class="nav-item dropdown">
+       <% if current_user.admin? %>
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin Profile
+        </a>
+        <% else %>
+         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Your Profile
         </a>
+        <% end %>
+
         <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
           <%= link_to 'View your profile',user_path(session[:user_id]),class:'dropdown-item'%>
           <%= link_to 'Edit your profile',edit_user_path(session[:user_id]),class:'dropdown-item'%>
