@@ -1,7 +1,7 @@
 <p>
-<%= link_to "Articles >>",articles_path %>
+<%= link_to "Articles /",articles_path %>
 <%= link_to " Show",articles_path %>
-<%= link_to " >>#{@article.title}" %>
+<%= link_to " / #{@article.title}" %>
 
 </p>
 <hr class="md-12">
@@ -32,7 +32,7 @@
 <div class="card card-body">
   <pre class="card-text"
    style="
-    white-space:pre-wrap; 
+    white-space:pre-wrap;
     color: darkslategrey;
     white-space: pre-wrap;
     --x-height-multiplier: 0.35;
@@ -47,22 +47,29 @@
     margin-top:10px;">
 
    <%=@article.description %>
-     
+
    </pre>
 
   <% if logged_in? && (@article.user == current_user or current_user.admin?)  %>
   <!-- #@article.user_id==session[:user_id] qajo ma nalt @article.user==current_user mundet me u bo edhe si ne koment qysh po shennon -->
     <div class="article-actions">
-    <%= link_to "Edit this article",edit_article_path(@article),class:'btn btn-primary btn-sm '%> 
+    <%= link_to "Edit this article",edit_article_path(@article),class:'btn btn-primary btn-sm '%>
     <%= link_to "Delete this article",article_path(@article),:method=>:delete,class:'btn btn-danger btn-sm',:data=>{:confirm=>"Are your sure you want to delete this article"}%>
     <%= link_to "Back to article listing",articles_path,class:'btn btn-success btn-sm'%>
   </div>
-  
-  <% end %> 
- 
+
+  <% end %>
+
+
+
+
+
 </div>
   <% if logged_in? && @article.user_id!=session[:user_id] %>
 
     <%= render 'likes' %>
-    
+
   <% end %>
+
+  <%= render 'comments' %>
+  <%= render 'comments/index'%>

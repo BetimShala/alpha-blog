@@ -7,7 +7,7 @@
   float:left;
   font-size: 1.7em;
   color:#fff;
-  
+
   letter-spacing: -1px;
   font-weight: bold;
 }
@@ -136,30 +136,82 @@ padding-left: 0;
   font-weight: 400;
 }
 
-#transform-img
 
 #transform-img
  {
-  
+
     -webkit-transition: -webkit-transform 2s; /* Safari */
     transition:transform 2s;
+
+    img:hover {
+        /*width: 300px;
+        height: 300px;*/
+        -webkit-transform: rotate(180deg); /* Safari */
+        transform: scale(1.25,1.25);
+        -webkit-box-shadow: 0px 0px 11px 5px rgba(47,150,232,0.78);
+-moz-box-shadow: 0px 0px 11px 5px rgba(47,150,232,0.78);
+box-shadow: 0px 0px 11px 5px rgba(47,150,232,0.78);
+
+    }
+
+    small{
+      float: left;
+                    font-size: larger;
+                    margin-top: 50px;
+                    color: darkgray;
+                    margin-left:5px;
+    }
+}
+#transform-img:active,
+#transform-img:focus,
+#transform-img.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
-#transform-img
-{ img:hover {
-    /*width: 300px;
-    height: 300px;*/
-    -webkit-transform: rotate(180deg); /* Safari */
-    transform: scale(1.25,1.25);
-}}
+#text-area-comment {
+  background-image: asset-url("comment.png");
+    background-repeat: no-repeat;
+    text-indent: 20px;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  /*background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);*/
+  border: 1px solid rgba(0,0,0,.09);
+  /*border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;*/
+  border-radius: 3px;
+  /*border-width: medium 1px 1px medium;*/
+  box-shadow:0 1px 4px rgba(0,0,0,.03);
+  color: #555555;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  padding: 5px 8px;
+  transition: background-color 0.2s ease 0s;
+}
+#text-area-comment::placeholder {
+  color:#cbcbcb;
+  padding-left:25px;
+  padding-top:20px;
+}
 
-#transform-img 
-{
-} 
+
+#text-area-comment:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    outline-width: 0;
+    -webkit-box-shadow: 0px 0px 11px 5px rgba(47,150,232,0.78);
+-moz-box-shadow: 0px 0px 11px 5px rgba(47,150,232,0.78);
+box-shadow: 0px 0px 8px 3px rgba(47,150,232,0.78);
+}
+
+
 
 footer{
    background-color: #0f1922 !important;
-    position:fixed;
+
     bottom: 0;
     left: 0;
     right: 0;
@@ -174,4 +226,3 @@ footer p {
     line-height: 100%;
     float: left;
 }
-

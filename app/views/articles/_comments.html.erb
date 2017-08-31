@@ -1,0 +1,27 @@
+<%= form_for(@comment,:html=>{class: "form-horizontal",style:'margin-left:0%;
+    padding: 0%;margin-top:10%;width:100%;', role: "form"}) do |f| %>
+     <div class="row-2" align='center'>
+        <div class="col-sm-8" style="margin-left: 0%" align="center">
+            <%= f.hidden_field :article_id, value: @article.id %>
+            <% if logged_in? %>
+              <%=  f.hidden_field :user_id, value: session[:user_id] %>
+              <%= f.hidden_field :username,value: User.find(session[:user_id]).username %>
+            <% else %>
+              <% r=rand(1500..3500) %>
+              <%= f.hidden_field :user_id,value: nil%>
+              <%= f.hidden_field :username,value: "Guest#{r}" %>
+            <% end %>
+
+            <%= f.text_area :description,onfocusin:"this.style.backgroundImage = 'none';",placeholder:"Leave a comment",class:"form-control",id:"text-area-comment",rows:8,style:'white-space:pre;white-space:pre-wrap;'%>
+          <p style="color: darkseagreen;float:left;margin-top:5%;">
+
+           <%= f.submit 'Post Comment',class:'btn btn-primary btn-sm',:remote => true%>
+          </p>
+
+        </div>
+
+
+
+    </div>
+
+    <% end %>

@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
-  
+
   before_action :find_article,:only=>[:edit,:update,:show,:destroy],:except=>[:_newest_article]
   before_action :require_user,:except=>[:index,:show]
   before_action :require_same_user ,only:[:edit,:update,:destroy]
   # NEW && CREATE
   def new
    if logged_in?
-     @article=Article.new 
+     @article=Article.new
    else
     redirect_to root_path
    end
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
 
   # EDIT && UPDATE
   def edit
-  
+
   end
 
   def update
@@ -45,17 +45,17 @@ class ArticlesController < ApplicationController
   # INDEX && SHOW
   def index
    @articles=Article.paginate(page: params[:page],per_page:6)
- 
+
   end
 
   def show
-
+    @comment = @article.comments.build
   end
 
   # DELETE && DESTROY
 
   def delete
-    
+
   end
 
   def destroy
@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
 
 
 
-  private 
+  private
 
   def find_article
     @article=Article.find(params[:id])

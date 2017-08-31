@@ -1,25 +1,58 @@
+<br>
+<hr class="md-12">
 <%= form_for(Like.new,:html=>{class: "form-horizontal",style:'margin-left:0%;
-    padding: 0%;margin-top:0%;float:left;', role: "form"}) do |f| %>
+    padding: 0%;margin-top:0%;width:100%;height:200px', role: "form"}) do |f| %>
      <div class="form-group row">
-        <div class="col-sm-8" style="margin-left: 7%" align="center">
+        <div class="col-sm-8" style="margin-left: 2%" align="center">
             <%= hidden_field_tag(:article_id, @article.id) %>
             <%= hidden_field_tag(:user_id,session[:user_id]) %>
-          <p style="width: 550px;margin-left: -30%;color: darkseagreen">
-           If you like this article, please support it with
-           <%= button_tag(type: 'submit', id:"transform-img",class: "btn btn-primary btn-sm",style:'background:transparent;border-style:none;color:darkseagreen;font-size:medium') do %>
-          
+          <p style="font-size: 22px!important;
+                 float: left;
+                 margin-top: 5%;
+                 color: black !important;
+                 font-family: medium-ui-sans-serif-text-font,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+                     letter-spacing: 0;
+                     font-weight: 400;
+                     font-style: normal;
+                     text-rendering: optimizeLegibility;
+                     -webkit-font-smoothing: antialiased;
+                 ">
+           Show your support <br>
+           <%= button_tag(type: 'submit',:remote=>true, id:"transform-img",class: "btn btn-primary btn-sm",
+           style:'background:transparent;border-style:none;color:black;font-size:22px') do %>
+
              <% if !Like.find_by(user_id: session[:user_id], article_id:@article.id) %>
-              <img src="/assets/no_like.png" onmouseover="this.src='/assets/no_like_hover.png'" onmouseout="this.src='/assets/no_like.png'">
+              <img src="/assets/no_like.png" onmouseover="this.src='/assets/no_like_hover.png'" onmouseout="this.src='/assets/no_like.png'"
+                  style="vertical-align: middle;
+                          border-style: none;
+                          float: left;
+                          margin-left: -65%;
+                          margin-top: 30%;
+                          border-radius: 50%;
+                          border: 1px solid rgba(0,0,0,.15);">
              <% else %>
-              <img src="/assets/like.png" >
+              <img src="/assets/like.png" style="vertical-align: middle;
+                      border-style: none;
+                      float: left;
+                      margin-left: -65%;
+                      margin-top: 30%;
+                      border-radius: 50%;
+                      border: 1px solid rgba(0,0,0,.15);" >
              <% end %>
-             <small style="float: right;font-size: x-large;"><%= @article.likes.count %></small>
+             <small style="float: left;
+                           font-size: larger;
+                           margin-top: 50px;
+                           color: darkgray;
+                           margin-left:5px;">
+            <%= @article.likes.count %>
+
+            </small>
           <% end %>
           </p>
+
         </div>
-        <hr class="md-12">
+
 
     </div>
-
+    <hr class="md-12">
     <% end %>
-

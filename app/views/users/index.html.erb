@@ -15,12 +15,12 @@
 
             <li class="article-title">
               <h4 class="card-title"> <%= link_to user.username, user_path(user),style:'color:black' %></h4>
-             
+
 
             </li>
             <p class="card-text" style="color:grey"><%= user.short_bio%></p>
 
-           
+
           </div>
            <div class="card-footer text-muted">
                 <li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
