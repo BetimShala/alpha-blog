@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830070907) do
+ActiveRecord::Schema.define(version: 20170928095823) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -48,6 +48,27 @@ ActiveRecord::Schema.define(version: 20170830070907) do
     t.integer "article_id"
     t.integer "user_id"
     t.index ["user_id", "article_id"], name: "index_likes_on_user_id_and_article_id", unique: true
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "action_by"
+    t.string "action_map_url"
+    t.string "action_type"
+    t.boolean "checked", default: false
+    t.boolean "available", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|

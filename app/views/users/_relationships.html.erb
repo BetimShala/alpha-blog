@@ -1,0 +1,5 @@
+<%if !(Relationship.find_by(follower_id:current_user, followed_id:@user.id))%>
+  <%= button_to "Follow",relationships_path(follower_id: current_user,followed_id: @user.id),{class: "btn btn-outline-info"}%>
+<% else %>
+  <%= button_tag "Following",{class: "btn btn-outline-success"}%>
+<% end %>

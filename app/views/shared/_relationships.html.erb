@@ -1,0 +1,3 @@
+<%= form_for(Relationship.new,role: "form"}) do |r| %>
+<%= hidden_field_tag(:follower_id, @article.id) %>
+<%= hidden_field_tag(:user_id,session[:user_id]) %>

@@ -11,15 +11,15 @@
         <div class="card border-info mb-3" style="max-width: 50rem;">
           <div class="card card-body text-info">
 
-            <li><%= link_to gravatar_for(user), user_path(user) %></li>
+            <li><%= link_to gravatar_for(user),user_path(user) %></li>
 
             <li class="article-title">
               <h4 class="card-title"> <%= link_to user.username, user_path(user),style:'color:black' %></h4>
-
-
             </li>
-            <p class="card-text" style="color:grey"><%= user.short_bio%></p>
 
+            <p class="card-text" style="color:grey"><%= user.short_bio%></p>
+            <%#binding.pry%>
+            
 
           </div>
            <div class="card-footer text-muted">

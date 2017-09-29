@@ -6,9 +6,18 @@ class User < ActiveRecord::Base
                                           # articles
   has_secure_password
   has_many :likes
-  has_many :friendships
+  #active_relationships dmth ata qe ne i bejme follow
+  has_many :active_relationships,class_name: "Relationship",foreign_key: "follower_id",dependent: :destroy
+  #passive_relationships dmth ata qe na kan bere neve follow
+  has_many :passive_relationships,class_name: "Relationship",foreign_key: "followed_id",dependent: :destroy
+
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   has_many :comments
+  #notifications
+  has_many :notifications
+
   #po deshirojme qe te gjitha email ne db me u rujt
   #ne shkronja te vogla,kete gje e arrijme me ane te
   # metodes before_save{}

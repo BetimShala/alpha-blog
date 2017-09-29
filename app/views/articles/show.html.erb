@@ -65,7 +65,7 @@
 
 
 </div>
-  <% if logged_in? && @article.user_id!=session[:user_id] %>
+  <% if logged_in? && @article.user_id!=session[:user_id]%>
 
     <%= render 'likes' %>
 

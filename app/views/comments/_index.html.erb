@@ -1,5 +1,18 @@
+<script>
+$(document).ready(function(){
+    $("#show-comments").click(function(){
+        $("#showed-comments").show(250);
+        $("#show-comments").hide();
+    });
+});
+</script>
+
+
+<div class="row-2" id="show-comments" align='center'>
+<p>Show all comments</p>
+</div>
 <% i=0%>
-<div class="row-2" style="margin-top:10%">
+<div class="row-2" style="margin-top:15%;display:none;" id="showed-comments">
 <hr class="md-4">
 <h2 align="">Comments</h2>
 <hr class="md-4">
@@ -59,5 +72,7 @@
     </div>
 
   <% end %>
+  <% else %>
+  <span>There's no comment for this article</span>
 <% end %>
   </div>

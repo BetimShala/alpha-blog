@@ -23,5 +23,14 @@ class CategoryTest < ActiveSupport::TestCase
     assert @category.valid?
   end
 
+  test "name should be unique" do
+    @category.save
+    category2 = Category.new(name: "programming")
+    binding.pry
+    assert_not category2.valid?
+    binding.pry
+
+end
+
 
 end

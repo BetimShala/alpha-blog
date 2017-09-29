@@ -50,6 +50,10 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = @article.comments.build
+    #rreshti me siper na mundeson qe kur jemi ne faqen show tek
+    #artikujt variabla @comment te mos jete nil ose empty PRA
+    #variabla @comment nenkuptohet qe nuk eshte nil dhe se artikulli
+    #i asaj faqeje posedon komente
   end
 
   # DELETE && DESTROY

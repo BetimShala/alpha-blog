@@ -21,7 +21,7 @@
            <%= button_tag(type: 'submit',:remote=>true, id:"transform-img",class: "btn btn-primary btn-sm",
            style:'background:transparent;border-style:none;color:black;font-size:22px') do %>
 
-             <% if !Like.find_by(user_id: session[:user_id], article_id:@article.id) %>
+             <% if !Like.find_by(user_id: current_user, article_id:@article.id) %>
               <img src="/assets/no_like.png" onmouseover="this.src='/assets/no_like_hover.png'" onmouseout="this.src='/assets/no_like.png'"
                   style="vertical-align: middle;
                           border-style: none;
